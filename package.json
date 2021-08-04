@@ -2,10 +2,27 @@
   "name": "hello-vue",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
+  "build": {
+    "appId": "demo",
+    "copyright": "Copyright@2021",
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "runAfterFinish": true
+    },
+    "files": [
+      "dist/*.html",
+      "*.js"
+    ]
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -17,6 +34,8 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "electron": "^13.1.8",
+    "electron-builder": "^22.11.7",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0"
   },
